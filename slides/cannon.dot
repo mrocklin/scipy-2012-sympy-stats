@@ -1,0 +1,38 @@
+graph{
+    x0;
+    y0;
+    v;
+    theta;
+    g;
+    yf;
+    t;
+
+    "v*cos(theta)*t" -- v
+    "v*cos(theta)*t" -- t
+    "v*cos(theta)*t" -- "cos(theta)"
+    "cos(theta)" -- theta
+
+    "v*sin(theta)*t + g*t**2" -- v
+    "v*sin(theta)*t + g*t**2" -- t
+    "v*sin(theta)*t + g*t**2" -- "sin(theta)"
+    "v*sin(theta)*t + g*t**2" -- "g*t**2"
+    "sin(theta)" -- theta
+    "g*t**2" -- g
+    "g*t**2" -- t
+
+    x -- x0
+    x -- "v*cos(theta)*t"
+
+    y -- y0
+    y -- "v*sin(theta)*t + g*t**2"
+
+    impact_time -- y
+    impact_time -- yf
+    impact_time -- t
+
+    xf -- x0
+    xf -- v
+    xf -- theta
+    xf -- impact_time
+}
+
